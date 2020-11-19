@@ -1,0 +1,60 @@
+/* COMMON RULES */
+body {
+  font-family: "Marvel";
+}
+.container {
+  width: 1200px;
+  margin: 0 auto;
+}
+/* HEADER */
+.banner {
+  margin: 0 auto;
+  background-color: #a90003;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.banner img {
+  height: 200px;
+  width: 1000px;
+  object-fit: cover;
+  object-position: center;
+}
+.header-category {
+  margin: 0 auto;
+  background-color: #a90003;
+}
+.header-category > div {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 100px;
+}
+.header-category span {
+  font-size: 30px;
+  height: 40px;
+  width: 150px;
+  border: 2px white solid;
+  box-sizing: border-box;
+  color: white;
+  text-transform: uppercase;
+  padding: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* SINGLE-CARD */
+.vitrine {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 20px 0;
+  box-sizing: border-box;
+}
+.single-card {
+  height: 190px;
+  width: 190px;
+  border: black 1px dashed;
+  margin: 24px;
+  box-sizing: border-box;
+}
