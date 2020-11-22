@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import Card from "../Components/Card";
 import AbcOrder from "../Components/AbcOrder";
@@ -21,12 +20,17 @@ const Home = ({
 
   useEffect(() => {
     const fetchdata = async () => {
+      setIsLoading(false);
+
       try {
-        const response = await axios.post("http://localhost:3100/", {
-          publicKey: marvelPublicKey,
-          page: page,
-          search: search,
-        });
+        const response = await axios.post(
+          "https://marvel-backend-ca.herokuapp.com/",
+          {
+            publicKey: marvelPublicKey,
+            page: page,
+            search: search,
+          }
+        );
         setCharacters(response.data.data.results);
         setIsLoading(true);
         setLastPage(Math.ceil(response.data.data.total / 100));

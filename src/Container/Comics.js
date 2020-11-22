@@ -17,13 +17,18 @@ const Comics = ({ marvelPublicKey, setModalCom, favComic, favComics }) => {
 
   useEffect(() => {
     const fetchdata = async () => {
+      setIsLoading2(false);
+
       try {
-        const response = await axios.post("http://localhost:3100/comics", {
-          publicKey: marvelPublicKey,
-          page: pageComics,
-          search: searchComics,
-          period: period,
-        });
+        const response = await axios.post(
+          "https://marvel-backend-ca.herokuapp.com/comics",
+          {
+            publicKey: marvelPublicKey,
+            page: pageComics,
+            search: searchComics,
+            period: period,
+          }
+        );
         console.log(
           "requete vers mon backend avec les param " + searchComics + period
         );

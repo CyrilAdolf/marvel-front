@@ -29,12 +29,15 @@ const Fav = ({
       setIsLoading(false);
 
       try {
-        const response = await axios.post("http://localhost:3100/favorits", {
-          publicKey: marvelPublicKey,
-          page: pageFav,
-          searchComics: searchComics,
-          searchCharacters: searchCharacters,
-        });
+        const response = await axios.post(
+          "https://marvel-backend-ca.herokuapp.com/favorits",
+          {
+            publicKey: marvelPublicKey,
+            page: pageFav,
+            searchComics: searchComics,
+            searchCharacters: searchCharacters,
+          }
+        );
         // console.log(response.data.tableForCharacters);
         setFavChars(response.data.tableForCharacters);
         // console.log(response.data.tableForComics);
