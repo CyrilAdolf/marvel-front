@@ -16,7 +16,7 @@ const ModalChar = ({ setModalChar, marvelPublicKey }) => {
     const fetchdata = async () => {
       try {
         const response = await axios.post(
-          "http://localhost:3100/character/comics",
+          "https://marvel-backend-ca.herokuapp.com/character/comics",
           {
             publicKey: marvelPublicKey,
             characterId: location.state.char.id,
