@@ -1,18 +1,50 @@
 /* COMMON RULES */
 body {
-  font-family: "Marvel";
+  font-family: "Marvel", "Geneva";
+  font-weight: 600;
+  font-size: 1.3rem;
+  /* background-image: url("../img/Background.jpg");
+  background-attachment: fixed; */
 }
 .container {
-  width: 1200px;
-  margin: 0 auto;
+  width: 80vw;
+  margin: 95px 5vw 0 auto;
+}
+a {
+  cursor: pointer;
+  text-transform: none;
+}
+input:focus {
+  outline: 0;
+}
+.isLoading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 250px;
+}
+.isLoading span {
+  font-size: 50px;
+}
+.isLoading img {
+  height: 500px;
 }
 /* HEADER */
+.header {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+}
 .banner {
   margin: 0 auto;
   background-color: #a90003;
   display: flex;
   justify-content: center;
   align-items: center;
+  color: white;
+  font-size: 155px;
+  /* height: 80%; */
+  z-index: 99;
 }
 .banner img {
   height: 200px;
@@ -20,21 +52,19 @@ body {
   object-fit: cover;
   object-position: center;
 }
-.header-category {
-  margin: 0 auto;
-  background-color: #a90003;
-}
-.header-category > div {
+
+.aside-category {
   display: flex;
+  flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  height: 100px;
+  height: 100%;
 }
-.header-category span {
+.aside-category a {
   font-size: 30px;
   height: 40px;
   width: 150px;
-  border: 2px white solid;
+  /* border: 2px white solid; */
   box-sizing: border-box;
   color: white;
   text-transform: uppercase;
@@ -42,19 +72,254 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  text-decoration: none;
+  /* transform: rotate(-45deg); */
+}
+.aside-category span {
+  margin-left: 7px;
+}
+.aside {
+  height: 100vh;
+  width: 5vw;
+  position: absolute;
+  background-image: linear-gradient(rgba(169, 0, 3), rgba(148, 53, 53, 0.5));
+  transition: width 200ms ease;
+}
+.aside:hover {
+  width: 10vw;
+}
+.aside > div > a > span:last-child {
+  display: none;
+}
+.aside:hover a > span:last-child {
+  display: inline;
+}
+.search-bar {
+  position: fixed;
+  top: 150px;
+  left: 5vw;
+  width: 95vw;
+  border: 2px solid #a90003;
+  box-sizing: border-box;
+}
+.search-bar input {
+  background-color: white;
+  width: 100%;
+  border: none;
+  height: 45px;
+  padding-left: 20px;
+  font-size: 40px;
+  color: rgba(128, 128, 128, 0.947);
+  font-family: "Marvel";
+  text-transform: uppercase;
 }
 
 /* SINGLE-CARD */
+/* SINGLE-CARD */
+/* SINGLE-CARD */
+.aside-char,
+.aside-comics {
+  position: fixed;
+  top: 201px;
+  left: 5vw;
+  height: 50px;
+  width: 95vw;
+  background-color: black;
+  color: #a90003;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.aside-char span:hover,
+.aside-comics span:hover {
+  cursor: pointer;
+  color: red;
+  font-weight: 900;
+}
+
 .vitrine {
   display: flex;
   flex-wrap: wrap;
-  margin: 20px 0;
+  margin: 40px 0;
   box-sizing: border-box;
 }
 .single-card {
-  height: 190px;
-  width: 190px;
-  border: black 1px dashed;
+  width: 250px;
   margin: 24px;
+  /* padding: 4px; */
   box-sizing: border-box;
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 10px;
+  color: white;
+  height: 300px;
+  /* position: relative; */
+  /* z-index: -1; */
+}
+.single-card img {
+  height: 300px;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* .single-card a > span:first-child  */
+.single-card-name {
+  display: inline-block;
+  width: 220px;
+  background-color: white;
+  color: black;
+  border: 1px black solid;
+  text-align: center;
+  box-sizing: border-box;
+  margin: 0 0 10px 0;
+  padding: 25px 0;
+  text-transform: uppercase;
+  height: 65px;
+  overflow-y: hidden;
+}
+.spacer-name {
+  height: 184px;
+  /* background-color: aqua; */
+}
+
+.fav-button {
+  display: inline;
+  color: #a90003;
+  font-size: 35px;
+  margin-left: 200px;
+  margin-top: 5px;
+}
+.fav-button:hover {
+  cursor: pointer;
+}
+.red {
+  color: red;
+}
+
+.page-numb {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 65%;
+  margin: 10px auto;
+}
+.page-numb span {
+  cursor: pointer;
+}
+.page-numb span:hover {
+  text-decoration: underline;
+}
+.actual-page {
+  background-color: red;
+  border-radius: 1px;
+  padding: 5px;
+  box-sizing: border-box;
+  /* width: 20px;
+  height: 20px; */
+  /* text-align: center; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* FAV PAGE */
+/* FAV PAGE */
+/* FAV PAGE */
+
+.fav-characters-section,
+.fav-comics-section {
+  display: flex;
+}
+
+/* MODAL CHAR */
+/* MODAL CHAR */
+/* MODAL CHAR */
+
+.modal-char {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modal-char-info {
+  position: relative;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 65vh;
+  width: 70vw;
+  padding: 15px;
+}
+.modal-char-info > img {
+  height: 90%;
+  object-fit: cover;
+  object-position: center;
+  margin-right: 50px;
+  margin-left: 15px;
+}
+.modal-char-info > div {
+  width: 50%;
+}
+.modal-char-column-b {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 100%;
+  margin: auto;
+  text-transform: uppercase;
+  font-weight: 100;
+  margin: 0 auto;
+  width: 95%;
+}
+.border {
+  text-decoration: underline;
+}
+.comics-carrousel {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: scroll;
+  border: black 3px solid;
+  padding: 5px;
+  margin-right: 15px;
+}
+.modal-char ::-webkit-scrollbar {
+  -webkit-appearance: none;
+  /* width: 7px; */
+}
+.modal-char ::-webkit-scrollbar-thumb {
+  height: 2px;
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
+}
+.comics-carrousel img {
+  width: 150px;
+  margin: 0 5px;
+  object-fit: cover;
+}
+.modal-com-creators {
+  display: flex;
+  flex-direction: column;
+}
+.modal-com-creators > div {
+  display: flex;
+  justify-content: space-between;
+}
+.close-modal-char {
+  cursor: pointer;
+  position: absolute;
+  top: 20px;
+  right: -32vw;
+  font-size: 30px;
 }
